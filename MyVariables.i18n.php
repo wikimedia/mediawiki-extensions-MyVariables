@@ -30,11 +30,25 @@ $messages['de'] = array(
 	'myvariables-desc' => 'Ergänzt neue integrierte Variablen',
 );
 
+/** Finnish (suomi)
+ * @author VezonThunder
+ */
+$messages['fi'] = array(
+	'myvariables-desc' => 'Mahdollistaa uusien sisäänrakennettujen muuttujien lisäämisen',
+);
+
 /** French (français)
  * @author Gomoko
  */
 $messages['fr'] = array(
 	'myvariables-desc' => "Permet l'ajout de nouvelles variables intégrées",
+);
+
+/** Galician (galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'myvariables-desc' => 'Permite a adición de novas variables integradas',
 );
 
 /** Japanese (日本語)
