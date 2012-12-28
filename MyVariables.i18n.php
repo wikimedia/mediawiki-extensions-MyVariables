@@ -51,6 +51,13 @@ $messages['gl'] = array(
 	'myvariables-desc' => 'Permite a adición de novas variables integradas',
 );
 
+/** Italian (italiano)
+ * @author Beta16
+ */
+$messages['it'] = array(
+	'myvariables-desc' => "Consente l'aggiunta di nuove variabili",
+);
+
 /** Japanese (日本語)
  * @author Shirayuki
  */
