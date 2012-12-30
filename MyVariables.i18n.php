@@ -17,17 +17,19 @@ $messages['en'] = array(
 );
 
 /** Message documentation (Message documentation)
+ * @author Kghbln
  * @author Shirayuki
  */
 $messages['qqq'] = array(
-	'myvariables-desc' => '{{desc|name=MyVariables|url=http://www.mediawiki.org/wiki/Extension:MyVariables}}',
+	'myvariables-desc' => '{{desc|name=MyVariables|url=https://www.mediawiki.org/wiki/Extension:MyVariables}}',
 );
 
 /** German (Deutsch)
+ * @author Kghbln
  * @author Metalhead64
  */
 $messages['de'] = array(
-	'myvariables-desc' => 'Ergänzt neue integrierte Variablen',
+	'myvariables-desc' => 'Ergänzt zusätzliche Variablen',
 );
 
 /** Finnish (suomi)
