@@ -46,6 +46,13 @@ $messages['fr'] = array(
 	'myvariables-desc' => "Permet l'ajout de nouvelles variables intégrées",
 );
 
+/** Franco-Provençal (arpetan)
+ * @author ChrisPtDe
+ */
+$messages['frp'] = array(
+	'myvariables-desc' => 'Pèrmèt l’aponsa de variâbles novèles entrebetâyes',
+);
+
 /** Galician (galego)
  * @author Toliño
  */
