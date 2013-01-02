@@ -40,10 +40,11 @@ $messages['fi'] = array(
 );
 
 /** French (français)
+ * @author Crochet.david
  * @author Gomoko
  */
 $messages['fr'] = array(
-	'myvariables-desc' => "Permet l'ajout de nouvelles variables intégrées",
+	'myvariables-desc' => 'Permet l’ajout de nouvelles variables intégrées',
 );
 
 /** Franco-Provençal (arpetan)
