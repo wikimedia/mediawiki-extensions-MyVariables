@@ -61,6 +61,13 @@ $messages['gl'] = array(
 	'myvariables-desc' => 'Permite a adición de novas variables integradas',
 );
 
+/** Upper Sorbian (hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'myvariables-desc' => 'Zmóžnja přidawanje nowotworjenych wariablow',
+);
+
 /** Italian (italiano)
  * @author Beta16
  */
@@ -97,10 +104,11 @@ $messages['nl'] = array(
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Dragonòt
  */
 $messages['pms'] = array(
-	'myvariables-desc' => 'A përmëtt ëd gionté dle costrussion neuve ant le variable',
+	'myvariables-desc' => 'A përmët ëd gionté ëd neuve variàbij antëgrà',
 );
 
 /** Ukrainian (українська)
