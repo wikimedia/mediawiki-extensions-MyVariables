@@ -89,6 +89,13 @@ $messages['ko'] = array(
 	'myvariables-desc' => '새 내장 변수의 추가를 허용',
 );
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'myvariables-desc' => 'Erlaabt et nei agebaute Variabelen derbäizesetzen',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
