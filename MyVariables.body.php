@@ -4,10 +4,6 @@
  *
  * @author Pavel Astakhov <pastakhov@yandex.ru>
  */
-
-/**
- *
- */
 class MyVariables {
     /**
      * Register wiki markup words associated with MAG_NIFTYVAR as a variable
@@ -19,6 +15,9 @@ class MyVariables {
         $customVariableIds[] = 'MAG_CURRENTUSER';
         $customVariableIds[] = 'MAG_CURRENTUSERREALNAME';
         $customVariableIds[] = 'MAG_LOGO';
+        $customVariableIds[] = 'MAG_UUID';
+        $customVariableIds[] = 'MAG_WIKILANGUAGECODE';
+        $customVariableIds[] = 'MAG_USERLANGUAGECODE';
 
         return true;
     }
@@ -45,10 +44,46 @@ class MyVariables {
                 $parser->disableCache(); # Mark this content as uncacheable
                 $ret = $GLOBALS['wgUser']->mRealName;
                 break;
-
+            case 'MAG_UUID':
+                $parser->disableCache(); # Mark this content as uncacheable
+                $ret = self::get_UUID();
+                break;
+            case 'MAG_WIKILANGUAGECODE':
+                $parser->disableCache();
+                $ret = $GLOBALS['wgLanguageCode'];
+                break;
+            case 'MAG_USERLANGUAGECODE':
+                $parser->disableCache();
+                $ret = $GLOBALS['wgUser']->getOption('language');
+                break;
             default:
                 return false;
         }
         return true;
+    }
+
+    /**
+     * Generates version 4 UUID (random)
+     *
+     * @author Ryan McKeel ( Rmckeel )
+     * @return string
+     */
+    public static function get_UUID( ) {
+        if( function_exists(uuid_make) ) {
+            // create random UUID, possibly support other methods later
+            uuid_create(&$v4);
+            uuid_make($v4, UUID_MAKE_V4);
+            uuid_export($v4, UUID_FMT_STR, &$v4String);
+        } else {
+            // Alternate creation method from http://aaronsaray.com/blog/2009/01/14/php-and-the-uuid/comment-page-1/#comment-1522
+            // May not be as fast or as accurate to specification as php5-uuid
+            $v4String = sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+                mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
+                mt_rand( 0, 0x0fff ) | 0x4000,
+                mt_rand( 0, 0x3fff ) | 0x8000,
+                mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ) );
+        }
+
+        return $v4String;
     }
 }
