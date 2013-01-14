@@ -22,9 +22,9 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'MyVariables',
-	'version'        => '3.0.0',
+	'version'        => '3.1.0',
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:MyVariables',
-	'author'         => array( '[[mw:User:Nad|Aran Dunkley]]', '[[mw:User:Pastakhov|Pavel Astakhov]]' ),
+	'author'         => array( '[[mw:User:Nad|Aran Dunkley]]', '[[mw:User:Pastakhov|Pavel Astakhov]]', '...',  ),
 	'descriptionmsg' => 'myvariables-desc'
 );
 

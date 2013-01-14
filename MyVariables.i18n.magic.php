@@ -16,6 +16,9 @@ $magicWords['en'] = array(
     'MAG_CURRENTUSER' => array( 0, 'CURRENTUSER' ),
     'MAG_CURRENTUSERREALNAME' => array( 0, 'CURRENTUSERREALNAME'),
     'MAG_LOGO' => array( 0, 'LOGO'),
+    'MAG_UUID' => array( 0, 'UUID'),
+    'MAG_WIKILANGUAGECODE' => array(0, 'WIKILANGUAGECODE'),
+    'MAG_USERLANGUAGECODE' => array(0, 'USERLANGUAGECODE'),
 );
 
 
