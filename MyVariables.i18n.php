@@ -13,7 +13,7 @@ $messages = array();
  * @author Pavel Astakhov (pastakhov) <pastakhov@yandex.ru>
  */
 $messages['en'] = array(
-	'myvariables-desc' => 'Allows the addition of new built in variables',
+	'myvariables-desc' => 'Adds new built-in variables',
 );
 
 /** Message documentation (Message documentation)
