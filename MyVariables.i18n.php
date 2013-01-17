@@ -44,7 +44,7 @@ $messages['fi'] = array(
  * @author Gomoko
  */
 $messages['fr'] = array(
-	'myvariables-desc' => 'Permet l’ajout de nouvelles variables intégrées',
+	'myvariables-desc' => 'Ajoute de nouvelles variables intégrées',
 );
 
 /** Franco-Provençal (arpetan)
@@ -58,7 +58,7 @@ $messages['frp'] = array(
  * @author Toliño
  */
 $messages['gl'] = array(
-	'myvariables-desc' => 'Permite a adición de novas variables integradas',
+	'myvariables-desc' => 'Engade novas variables integradas',
 );
 
 /** Upper Sorbian (hornjoserbsce)
@@ -79,7 +79,7 @@ $messages['it'] = array(
  * @author Shirayuki
  */
 $messages['ja'] = array(
-	'myvariables-desc' => '新しい組み込み変数を追加できるようにする。',
+	'myvariables-desc' => '組み込み変数を新たに追加する',
 );
 
 /** Korean (한국어)
@@ -100,7 +100,7 @@ $messages['lb'] = array(
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
-	'myvariables-desc' => 'Овозможува додавање на новововедени променливи',
+	'myvariables-desc' => 'Додава на новововедени променливи',
 );
 
 /** Dutch (Nederlands)
