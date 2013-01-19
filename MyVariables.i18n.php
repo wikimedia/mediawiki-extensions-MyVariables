@@ -115,7 +115,7 @@ $messages['nl'] = array(
  * @author Dragonòt
  */
 $messages['pms'] = array(
-	'myvariables-desc' => 'A përmët ëd gionté ëd neuve variàbij antëgrà',
+	'myvariables-desc' => 'A gionta neuve variàbij antëgrà',
 );
 
 /** Ukrainian (українська)
