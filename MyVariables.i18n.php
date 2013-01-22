@@ -118,6 +118,13 @@ $messages['pms'] = array(
 	'myvariables-desc' => 'A gionta neuve variàbij antëgrà',
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'myvariables-desc' => 'Aggiunge varibbile nove de combilazione',
+);
+
 /** Ukrainian (українська)
  * @author AS
  */
