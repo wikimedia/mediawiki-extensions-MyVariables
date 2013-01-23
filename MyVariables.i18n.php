@@ -131,3 +131,10 @@ $messages['roa-tara'] = array(
 $messages['uk'] = array(
 	'myvariables-desc' => 'Дозволяє створювати вбудовані змінні',
 );
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Yfdyh000
+ */
+$messages['zh-hans'] = array(
+	'myvariables-desc' => '增加新的内置变量',
+);
