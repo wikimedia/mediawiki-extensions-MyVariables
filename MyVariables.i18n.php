@@ -36,7 +36,7 @@ $messages['de'] = array(
  * @author VezonThunder
  */
 $messages['fi'] = array(
-	'myvariables-desc' => 'Mahdollistaa uusien sisäänrakennettujen muuttujien lisäämisen',
+	'myvariables-desc' => 'Mahdollistaa uusien sisäänrakennettujen muuttujien lisäämisen', # Fuzzy
 );
 
 /** French (français)
@@ -51,7 +51,7 @@ $messages['fr'] = array(
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
-	'myvariables-desc' => 'Pèrmèt l’aponsa de variâbles novèles entrebetâyes',
+	'myvariables-desc' => 'Pèrmèt l’aponsa de variâbles novèles entrebetâyes', # Fuzzy
 );
 
 /** Galician (galego)
@@ -65,14 +65,14 @@ $messages['gl'] = array(
  * @author Michawiki
  */
 $messages['hsb'] = array(
-	'myvariables-desc' => 'Zmóžnja přidawanje nowotworjenych wariablow',
+	'myvariables-desc' => 'Zmóžnja přidawanje nowotworjenych wariablow', # Fuzzy
 );
 
 /** Italian (italiano)
  * @author Beta16
  */
 $messages['it'] = array(
-	'myvariables-desc' => "Consente l'aggiunta di nuove variabili",
+	'myvariables-desc' => "Consente l'aggiunta di nuove variabili", # Fuzzy
 );
 
 /** Japanese (日本語)
@@ -86,7 +86,7 @@ $messages['ja'] = array(
  * @author 아라
  */
 $messages['ko'] = array(
-	'myvariables-desc' => '새 내장 변수의 추가를 허용',
+	'myvariables-desc' => '새 내장 변수의 추가를 허용', # Fuzzy
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -107,7 +107,7 @@ $messages['mk'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
-	'myvariables-desc' => 'Maakt het toevoegen van nieuwe systeemvariabelen mogelijk',
+	'myvariables-desc' => 'Maakt het toevoegen van nieuwe systeemvariabelen mogelijk', # Fuzzy
 );
 
 /** Piedmontese (Piemontèis)
@@ -129,7 +129,7 @@ $messages['roa-tara'] = array(
  * @author AS
  */
 $messages['uk'] = array(
-	'myvariables-desc' => 'Дозволяє створювати вбудовані змінні',
+	'myvariables-desc' => 'Дозволяє створювати вбудовані змінні', # Fuzzy
 );
 
 /** Simplified Chinese (中文（简体）‎)
