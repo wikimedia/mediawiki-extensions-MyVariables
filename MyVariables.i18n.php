@@ -24,12 +24,26 @@ $messages['qqq'] = array(
 	'myvariables-desc' => '{{desc|name=MyVariables|url=https://www.mediawiki.org/wiki/Extension:MyVariables}}',
 );
 
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'myvariables-desc' => 'Amiesta variables integraes nueves',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64
  */
 $messages['de'] = array(
 	'myvariables-desc' => 'Ergänzt zusätzliche Variablen',
+);
+
+/** Esperanto (Esperanto)
+ * @author ArnoLagrange
+ */
+$messages['eo'] = array(
+	'myvariables-desc' => 'Aldonas novajn integritajn variablojn',
 );
 
 /** Finnish (suomi)
@@ -107,7 +121,7 @@ $messages['mk'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
-	'myvariables-desc' => 'Maakt het toevoegen van nieuwe systeemvariabelen mogelijk', # Fuzzy
+	'myvariables-desc' => 'Voegt nieuwe systeemvariabelen toe',
 );
 
 /** Piedmontese (Piemontèis)
