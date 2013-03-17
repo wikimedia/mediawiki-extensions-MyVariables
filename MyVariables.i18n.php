@@ -79,7 +79,7 @@ $messages['gl'] = array(
  * @author Michawiki
  */
 $messages['hsb'] = array(
-	'myvariables-desc' => 'Zmóžnja přidawanje nowotworjenych wariablow', # Fuzzy
+	'myvariables-desc' => 'Přidawa nowe zatwarjene wariable',
 );
 
 /** Italian (italiano)
