@@ -107,7 +107,7 @@ $messages['ko'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
-	'myvariables-desc' => 'Erlaabt et nei agebaute Variabelen derbäizesetzen', # Fuzzy
+	'myvariables-desc' => 'Setzt nei agebaute Variabelen derbäi',
 );
 
 /** Macedonian (македонски)
