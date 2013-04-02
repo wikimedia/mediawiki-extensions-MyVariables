@@ -34,9 +34,10 @@ $messages['ast'] = array(
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64
+ * @author Purodha
  */
 $messages['de'] = array(
-	'myvariables-desc' => 'Ergänzt zusätzliche Variablen',
+	'myvariables-desc' => 'Fügt dem Wiki zusätzliche Variablen hinzu',
 );
 
 /** Esperanto (Esperanto)
@@ -100,7 +101,14 @@ $messages['ja'] = array(
  * @author 아라
  */
 $messages['ko'] = array(
-	'myvariables-desc' => '새 내장 변수의 추가를 허용', # Fuzzy
+	'myvariables-desc' => '새 내장 변수를 추가합니다',
+);
+
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'myvariables-desc' => 'Deiht neue enjboute varrijaable en et Wiki.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
