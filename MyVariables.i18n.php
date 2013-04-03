@@ -87,7 +87,7 @@ $messages['hsb'] = array(
  * @author Beta16
  */
 $messages['it'] = array(
-	'myvariables-desc' => "Consente l'aggiunta di nuove variabili", # Fuzzy
+	'myvariables-desc' => 'Aggiunge nuove variabili predefinite',
 );
 
 /** Japanese (日本語)
