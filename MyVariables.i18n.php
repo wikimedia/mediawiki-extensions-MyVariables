@@ -149,9 +149,10 @@ $messages['roa-tara'] = array(
 
 /** Ukrainian (українська)
  * @author AS
+ * @author Base
  */
 $messages['uk'] = array(
-	'myvariables-desc' => 'Дозволяє створювати вбудовані змінні', # Fuzzy
+	'myvariables-desc' => 'Додає вбудовані змінні',
 );
 
 /** Simplified Chinese (中文（简体）‎)
