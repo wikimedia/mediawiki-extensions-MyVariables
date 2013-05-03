@@ -22,14 +22,14 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'MyVariables',
-	'version'        => '3.1.1',
+	'version'        => '3.1.2',
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:MyVariables',
 	'author'         => array( '[[mw:User:Nad|Aran Dunkley]]', '[[mw:User:Pastakhov|Pavel Astakhov]]', '...',  ),
 	'descriptionmsg' => 'myvariables-desc'
 );
 
 // Tell the whereabouts of files
-$dir = __DIR__;
+$dir = dirname(__FILE__);
 
 // Allow translations for this extension
 $wgExtensionMessagesFiles['MyVariables'] = $dir . '/MyVariables.i18n.php';
