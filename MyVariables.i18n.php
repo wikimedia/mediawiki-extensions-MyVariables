@@ -137,7 +137,7 @@ $messages['nl'] = array(
  * @author Dragonòt
  */
 $messages['pms'] = array(
-	'myvariables-desc' => 'A gionta neuve variàbij antëgrà',
+	'myvariables-desc' => 'A gionta ëd neuve variàbij antëgrà',
 );
 
 /** tarandíne (tarandíne)
