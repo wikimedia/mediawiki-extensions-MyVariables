@@ -161,3 +161,10 @@ $messages['uk'] = array(
 $messages['zh-hans'] = array(
 	'myvariables-desc' => '增加新的内置变量',
 );
+
+/** Traditional Chinese (中文（繁體）‎)
+ * @author Justincheng12345
+ */
+$messages['zh-hant'] = array(
+	'myvariables-desc' => '添加新的內置變數',
+);
