@@ -132,6 +132,13 @@ $messages['nl'] = array(
 	'myvariables-desc' => 'Voegt nieuwe systeemvariabelen toe',
 );
 
+/** Polish (polski)
+ * @author Woytecr
+ */
+$messages['pl'] = array(
+	'myvariables-desc' => 'Dodaje nowe wbudowane zmienne',
+);
+
 /** Piedmontese (Piemontèis)
  * @author Borichèt
  * @author Dragonòt
