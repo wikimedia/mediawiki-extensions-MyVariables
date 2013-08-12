@@ -21,7 +21,7 @@ $messages['en'] = array(
  * @author Shirayuki
  */
 $messages['qqq'] = array(
-	'myvariables-desc' => '{{desc|name=MyVariables|url=https://www.mediawiki.org/wiki/Extension:MyVariables}}',
+	'myvariables-desc' => '{{desc|name=My Variables|url=http://www.mediawiki.org/wiki/Extension:MyVariables}}',
 );
 
 /** Asturian (asturianu)
