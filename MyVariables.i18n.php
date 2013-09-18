@@ -147,6 +147,20 @@ $messages['pms'] = array(
 	'myvariables-desc' => 'A gionta ëd neuve variàbij antëgrà',
 );
 
+/** Portuguese (português)
+ * @author Cainamarques
+ */
+$messages['pt'] = array(
+	'myvariables-desc' => 'Adiciona novas variáveis integradas',
+);
+
+/** Brazilian Portuguese (português do Brasil)
+ * @author Cainamarques
+ */
+$messages['pt-br'] = array(
+	'myvariables-desc' => 'Adiciona novas variáveis integradas',
+);
+
 /** tarandíne (tarandíne)
  * @author Joetaras
  */
