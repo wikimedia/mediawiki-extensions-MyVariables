@@ -168,6 +168,13 @@ $messages['roa-tara'] = array(
 	'myvariables-desc' => 'Aggiunge varibbile nove de combilazione',
 );
 
+/** Russian (русский)
+ * @author Okras
+ */
+$messages['ru'] = array(
+	'myvariables-desc' => 'Добавляет новые встроенные переменные',
+);
+
 /** Ukrainian (українська)
  * @author AS
  * @author Base
