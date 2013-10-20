@@ -48,10 +48,11 @@ $messages['eo'] = array(
 );
 
 /** Finnish (suomi)
+ * @author Crt
  * @author VezonThunder
  */
 $messages['fi'] = array(
-	'myvariables-desc' => 'Mahdollistaa uusien sisäänrakennettujen muuttujien lisäämisen', # Fuzzy
+	'myvariables-desc' => 'Lisää uusia sisäänrakennettuja muuttujia.',
 );
 
 /** French (français)
