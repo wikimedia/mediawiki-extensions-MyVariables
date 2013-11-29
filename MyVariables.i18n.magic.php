@@ -13,11 +13,12 @@ $magicWords = array();
  * @author Pavel Astakhov <pastakhov@yandex.ru>
  */
 $magicWords['en'] = array(
-    'MAG_CURRENTUSER' => array( 0, 'CURRENTUSER' ),
-    'MAG_CURRENTUSERREALNAME' => array( 0, 'CURRENTUSERREALNAME'),
-    'MAG_LOGO' => array( 0, 'LOGO'),
-    'MAG_UUID' => array( 0, 'UUID'),
-    'MAG_USERLANGUAGECODE' => array(0, 'USERLANGUAGECODE'),
+	'MAG_CURRENTUSER' => array( 0, 'CURRENTUSER' ),
+	'MAG_CURRENTLOGGEDUSER' => array( 0, 'CURRENTLOGGEDUSER' ),
+	'MAG_CURRENTUSERREALNAME' => array( 0, 'CURRENTUSERREALNAME'),
+	'MAG_LOGO' => array( 0, 'LOGO'),
+	'MAG_UUID' => array( 0, 'UUID'),
+	'MAG_USERLANGUAGECODE' => array(0, 'USERLANGUAGECODE'),
 );
 
 
