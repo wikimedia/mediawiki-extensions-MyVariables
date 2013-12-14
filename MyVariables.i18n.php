@@ -114,9 +114,10 @@ $messages['ksh'] = array(
 
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
-	'myvariables-desc' => 'Setzt nei agebaute Variabelen derbäi',
+	'myvariables-desc' => 'Setzt nei agebaute Variabelen dobäi',
 );
 
 /** Macedonian (македонски)
