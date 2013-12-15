@@ -117,7 +117,7 @@ $messages['ksh'] = array(
  * @author Soued031
  */
 $messages['lb'] = array(
-	'myvariables-desc' => 'Setzt nei agebaute Variabelen dobäi',
+	'myvariables-desc' => 'Setzt nei agebaute Variabelen derbäi',
 );
 
 /** Macedonian (македонски)
