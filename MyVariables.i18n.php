@@ -47,6 +47,13 @@ $messages['eo'] = array(
 	'myvariables-desc' => 'Aldonas novajn integritajn variablojn',
 );
 
+/** Persian (فارسی)
+ * @author Armin1392
+ */
+$messages['fa'] = array(
+	'myvariables-desc' => 'افزودن متغیرهای جدید ساخته شده',
+);
+
 /** Finnish (suomi)
  * @author Crt
  * @author VezonThunder
