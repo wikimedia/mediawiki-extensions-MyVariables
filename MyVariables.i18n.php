@@ -47,6 +47,13 @@ $messages['eo'] = array(
 	'myvariables-desc' => 'Aldonas novajn integritajn variablojn',
 );
 
+/** Spanish (español)
+ * @author Fitoschido
+ */
+$messages['es'] = array(
+	'myvariables-desc' => 'Añade variables incorporadas nuevas',
+);
+
 /** Persian (فارسی)
  * @author Armin1392
  */
