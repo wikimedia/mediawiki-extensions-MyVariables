@@ -22,7 +22,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path'				=> __FILE__,
 	'name'				=> 'MyVariables',
-	'version'			=> '3.1.3',
+	'version'			=> '3.2.0',
 	'url'				=> 'https://www.mediawiki.org/wiki/Extension:MyVariables',
 	'author'			=> array( '[https://www.mediawiki.org/wiki/User:Nad Aran Dunkley]', '[https://www.mediawiki.org/wiki/User:Pastakhov Pavel Astakhov]', '...',  ),
 	'descriptionmsg'	=> 'myvariables-desc'
@@ -32,6 +32,7 @@ $wgExtensionCredits['parserhook'][] = array(
 $dir = dirname(__FILE__);
 
 // Allow translations for this extension
+$wgMessagesDirs['MyVariables'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['MyVariables'] = $dir . '/MyVariables.i18n.php';
 $wgExtensionMessagesFiles['MyVariablesMagic'] = $dir . '/MyVariables.i18n.magic.php';
 
