@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Siebrand"
-        ]
-    },
-    "myvariables-desc": "Voegt nieuwe systeemvariabelen toe"
+	"@metadata": {
+		"authors": [
+			"Siebrand"
+		]
+	},
+	"myvariables-desc": "Voegt nieuwe systeemvariabelen toe"
 }

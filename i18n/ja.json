@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Shirayuki"
-        ]
-    },
-    "myvariables-desc": "組み込み変数を新たに追加する"
+	"@metadata": {
+		"authors": [
+			"Shirayuki"
+		]
+	},
+	"myvariables-desc": "組み込み変数を新たに追加する"
 }

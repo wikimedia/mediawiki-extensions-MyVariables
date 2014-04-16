@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Okras"
-        ]
-    },
-    "myvariables-desc": "Добавляет новые встроенные переменные"
+	"@metadata": {
+		"authors": [
+			"Okras"
+		]
+	},
+	"myvariables-desc": "Добавляет новые встроенные переменные"
 }
