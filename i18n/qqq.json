@@ -2,8 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Kghbln",
-			"Shirayuki"
+			"Shirayuki",
+			"Umherirrender"
 		]
 	},
-	"myvariables-desc": "{{desc|name=My Variables|url=http://www.mediawiki.org/wiki/Extension:MyVariables}}"
+	"myvariables-desc": "{{desc|name=My Variables|url=https://www.mediawiki.org/wiki/Extension:MyVariables}}"
 }
