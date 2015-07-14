@@ -31,7 +31,7 @@ class MyVariables {
 	 * @param string $ret
 	 * @return boolean
 	 */
-	public static function assignAValue(&$parser, &$cache, &$magicWordId, &$ret) {
+	public static function assignAValue( &$parser, &$cache, &$magicWordId, &$ret ) {
 		$parser->disableCache(); # Mark this content as uncacheable
 		switch ( $magicWordId ) {
 			case 'MAG_CURRENTLOGGEDUSER':
@@ -50,7 +50,7 @@ class MyVariables {
 				$ret = $GLOBALS['wgUser']->mRealName;
 				break;
 			case 'MAG_UUID':
-				$ret = self::get_UUID();
+				$ret = UIDGenerator::newUUIDv4();
 				break;
 			case 'MAG_USERLANGUAGECODE':
 				$ret = $GLOBALS['wgUser']->getOption( 'language' );
@@ -59,25 +59,5 @@ class MyVariables {
 				return false;
 		}
 		return true;
-	}
-
-	/**
-	 * Generates version 4 UUID (random)
-	 *
-	 * @author Ryan McKeel ( Rmckeel )
-	 * @return string
-	 */
-	public static function get_UUID( ) {
-		if( function_exists('uuid_create') ) {
-			// create random UUID use PECL uuid extension
-			return uuid_create();
-		}
-		// Alternate creation method from http://aaronsaray.com/blog/2009/01/14/php-and-the-uuid/comment-page-1/#comment-1522
-		// May not be as fast or as accurate to specification as php5-uuid
-		return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-			mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
-			mt_rand( 0, 0x0fff ) | 0x4000,
-			mt_rand( 0, 0x3fff ) | 0x8000,
-			mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ) );
 	}
 }

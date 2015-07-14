@@ -1,5 +1,4 @@
 <?php
-
 /**
  * MyVariables - An extension that allows the addition of new built in variables
  *
@@ -20,24 +19,22 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 // Register this extension on Special:Version
 $wgExtensionCredits['parserhook'][] = array(
-	'path'				=> __FILE__,
-	'name'				=> 'MyVariables',
-	'version'			=> '3.2.0',
-	'url'				=> 'https://www.mediawiki.org/wiki/Extension:MyVariables',
-	'author'			=> array( '[https://www.mediawiki.org/wiki/User:Nad Aran Dunkley]', '[https://www.mediawiki.org/wiki/User:Pastakhov Pavel Astakhov]', '...',  ),
-	'descriptionmsg'	=> 'myvariables-desc'
+	'path' => __FILE__,
+	'name' => 'MyVariables',
+	'version' => '3.3.0',
+	'url' => 'https://www.mediawiki.org/wiki/Extension:MyVariables',
+	'author' => array( '[https://www.mediawiki.org/wiki/User:Nad Aran Dunkley]',
+		'[https://www.mediawiki.org/wiki/User:Pastakhov Pavel Astakhov]', '...', ),
+	'descriptionmsg' => 'myvariables-desc'
 );
-
-// Tell the whereabouts of files
-$dir = dirname(__FILE__);
 
 // Allow translations for this extension
 $wgMessagesDirs['MyVariables'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['MyVariables'] = $dir . '/MyVariables.i18n.php';
-$wgExtensionMessagesFiles['MyVariablesMagic'] = $dir . '/MyVariables.i18n.magic.php';
+$wgExtensionMessagesFiles['MyVariables'] = __DIR__ . '/MyVariables.i18n.php';
+$wgExtensionMessagesFiles['MyVariablesMagic'] = __DIR__ . '/MyVariables.i18n.magic.php';
 
 //Preparing classes for autoloading
-$wgAutoloadClasses['MyVariables'] = $dir . '/MyVariables.body.php';
+$wgAutoloadClasses['MyVariables'] = __DIR__ . '/MyVariables.body.php';
 
 // Register hooks
 $wgHooks['MagicWordwgVariableIDs'][] = 'MyVariables::declareVarIds';
