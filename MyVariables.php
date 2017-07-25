@@ -21,7 +21,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'MyVariables',
-	'version' => '3.3.1',
+	'version' => '3.4.0',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:MyVariables',
 	'author' => array(
 		'[https://www.mediawiki.org/wiki/User:Nad Aran Dunkley]',
@@ -34,7 +34,6 @@ $wgExtensionCredits['parserhook'][] = array(
 
 // Allow translations for this extension
 $wgMessagesDirs['MyVariables'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['MyVariables'] = __DIR__ . '/MyVariables.i18n.php';
 $wgExtensionMessagesFiles['MyVariablesMagic'] = __DIR__ . '/MyVariables.i18n.magic.php';
 
 // Preparing classes for autoloading
