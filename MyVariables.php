@@ -29,7 +29,7 @@ $wgExtensionCredits['parserhook'][] = array(
 		'...'
 	),
 	'descriptionmsg' => 'myvariables-desc',
-	'license-name' => 'GPL-2.0+'
+	'license-name' => 'GPL-2.0-or-later'
 );
 
 // Allow translations for this extension
