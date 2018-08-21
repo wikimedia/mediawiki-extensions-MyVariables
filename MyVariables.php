@@ -9,36 +9,17 @@
  * @author Aran Dunkley [http://www.organicdesign.co.nz/nad User:Nad]
  * @author Pavel Astakhov <pastakhov@yandex.ru>
  * @copyright © 2007 Aran Dunkley
- * @licence GNU General Public Licence 2.0 or later
+ * @license GPL-2.0-or-later
  */
 
-// Check to see if we are being called as an extension or directly
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( 'This file is an extension to MediaWiki and thus not a valid entry point.' );
+if ( function_exists( 'wfLoadExtension' ) ) {
+	wfLoadExtension( 'MyVariables' );
+	wfWarn(
+		'Deprecated PHP entry point used for MyVariables extension. ' .
+		'Please use wfLoadExtension instead, ' .
+		'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+	);
+	return;
+} else {
+	die( 'This version of the MyVariables extension requires MediaWiki 1.25+' );
 }
-
-// Register this extension on Special:Version
-$wgExtensionCredits['parserhook'][] = array(
-	'path' => __FILE__,
-	'name' => 'MyVariables',
-	'version' => '3.4.0',
-	'url' => 'https://www.mediawiki.org/wiki/Extension:MyVariables',
-	'author' => array(
-		'[https://www.mediawiki.org/wiki/User:Nad Aran Dunkley]',
-		'[https://www.mediawiki.org/wiki/User:Pastakhov Pavel Astakhov]',
-		'...'
-	),
-	'descriptionmsg' => 'myvariables-desc',
-	'license-name' => 'GPL-2.0-or-later'
-);
-
-// Allow translations for this extension
-$wgMessagesDirs['MyVariables'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['MyVariablesMagic'] = __DIR__ . '/MyVariables.i18n.magic.php';
-
-// Preparing classes for autoloading
-$wgAutoloadClasses['MyVariables'] = __DIR__ . '/MyVariables.body.php';
-
-// Register hooks
-$wgHooks['MagicWordwgVariableIDs'][] = 'MyVariables::declareVarIds';
-$wgHooks['ParserGetVariableValueSwitch'][] = 'MyVariables::assignAValue';

@@ -1,0 +1,31 @@
+{
+    "name": "MyVariables",
+    "version": "3.5.0",
+    "author": [
+        "[https://www.mediawiki.org/wiki/User:Nad Aran Dunkley]",
+        "[https://www.mediawiki.org/wiki/User:Pastakhov Pavel Astakhov]"
+    ],
+    "url": "https://www.mediawiki.org/wiki/Extension:MyVariables",
+    "descriptionmsg": "myvariables-desc",
+    "license-name": "GPL-2.0-or-later",
+    "type": "parserhook",
+    "requires": {
+        "MediaWiki": ">= 1.27.0"
+    },
+    "MessagesDirs": {
+        "MyVariables": [
+            "i18n"
+        ]
+    },
+    "ExtensionMessagesFiles": {
+        "MyVariablesMagic": "MyVariables.i18n.magic.php"
+    },
+    "AutoloadClasses": {
+        "MyVariablesHooks": "MyVariablesHooks.php"
+    },
+    "Hooks": {
+        "MagicWordwgVariableIDs": "MyVariablesHooks::declareVarIds",
+        "ParserGetVariableValueSwitch": "MyVariablesHooks::assignAValue"
+    },
+    "manifest_version": 2
+}

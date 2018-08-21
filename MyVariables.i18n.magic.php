@@ -7,16 +7,16 @@
  * @author Pavel Astakhov <pastakhov@yandex.ru>
  */
 
-$magicWords = array();
+$magicWords = [];
 
 /** English
  * @author Pavel Astakhov <pastakhov@yandex.ru>
  */
-$magicWords['en'] = array(
-	'MAG_CURRENTUSER' => array( 0, 'CURRENTUSER' ),
-	'MAG_CURRENTLOGGEDUSER' => array( 0, 'CURRENTLOGGEDUSER' ),
-	'MAG_CURRENTUSERREALNAME' => array( 0, 'CURRENTUSERREALNAME' ),
-	'MAG_LOGO' => array( 0, 'LOGO' ),
-	'MAG_UUID' => array( 0, 'UUID' ),
-	'MAG_USERLANGUAGECODE' => array( 0, 'USERLANGUAGECODE' ),
-);
+$magicWords['en'] = [
+	'MAG_CURRENTUSER' => [ 0, 'CURRENTUSER' ],
+	'MAG_CURRENTLOGGEDUSER' => [ 0, 'CURRENTLOGGEDUSER' ],
+	'MAG_CURRENTUSERREALNAME' => [ 0, 'CURRENTUSERREALNAME' ],
+	'MAG_LOGO' => [ 0, 'LOGO' ],
+	'MAG_UUID' => [ 0, 'UUID' ],
+	'MAG_USERLANGUAGECODE' => [ 0, 'USERLANGUAGECODE' ],
+];

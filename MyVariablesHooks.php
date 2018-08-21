@@ -4,12 +4,12 @@
  *
  * @author Pavel Astakhov <pastakhov@yandex.ru>
  */
-class MyVariables {
+class MyVariablesHooks {
 	/**
 	 * Register wiki markup words associated with MAG_NIFTYVAR as a variable
 	 *
-	 * @param array $customVariableIds
-	 * @return boolean
+	 * @param array &$customVariableIds
+	 * @return bool
 	 */
 	public static function declareVarIds( &$customVariableIds ) {
 		$customVariableIds[] = 'MAG_CURRENTUSER';
@@ -25,14 +25,15 @@ class MyVariables {
 	/**
 	 * Assign a value to our variable
 	 *
-	 * @param Parser $parser
-	 * @param array $cache
-	 * @param string $magicWordId
-	 * @param string $ret
-	 * @return boolean
+	 * @param Parser &$parser
+	 * @param array &$cache
+	 * @param string &$magicWordId
+	 * @param string &$ret
+	 * @return bool
 	 */
 	public static function assignAValue( &$parser, &$cache, &$magicWordId, &$ret ) {
-		$parser->disableCache(); # Mark this content as uncacheable
+		// Mark this content as uncacheable
+		$parser->disableCache();
 		switch ( $magicWordId ) {
 			case 'MAG_CURRENTLOGGEDUSER':
 				if ( $GLOBALS['wgUser']->isAnon() ) {
