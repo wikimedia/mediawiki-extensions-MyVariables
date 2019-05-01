@@ -32,29 +32,34 @@ class MyVariablesHooks {
 	 * @return bool
 	 */
 	public static function assignAValue( &$parser, &$cache, &$magicWordId, &$ret ) {
-		// Mark this content as uncacheable
-		$parser->disableCache();
+		// Disable parser cache for all variables except USERLANGUAGECODE and LOGO.
+		// USERLANGUAGECODE will cause the parser cache to vary on userlang.
+		// LOGO doesn't change often enough to be considered dynamic.
 		switch ( $magicWordId ) {
 			case 'MAG_CURRENTLOGGEDUSER':
 				if ( $GLOBALS['wgUser']->isAnon() ) {
+					$parser->disableCache();
 					$ret = '';
 					break;
 				}
 				// break is not necessary here
 			case 'MAG_CURRENTUSER':
+				$parser->disableCache();
 				$ret = $GLOBALS['wgUser']->mName;
 				break;
 			case 'MAG_LOGO':
 				$ret = $GLOBALS['wgLogo'];
 				break;
 			case 'MAG_CURRENTUSERREALNAME':
+				$parser->disableCache();
 				$ret = $GLOBALS['wgUser']->mRealName;
 				break;
 			case 'MAG_UUID':
+				$parser->disableCache();
 				$ret = UIDGenerator::newUUIDv4();
 				break;
 			case 'MAG_USERLANGUAGECODE':
-				$ret = $GLOBALS['wgUser']->getOption( 'language' );
+				$ret = $parser->getOptions()->getUserLang();
 				break;
 			default:
 				return false;
