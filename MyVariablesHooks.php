@@ -15,6 +15,8 @@ class MyVariablesHooks {
 		$customVariableIds[] = 'MAG_CURRENTUSER';
 		$customVariableIds[] = 'MAG_CURRENTLOGGEDUSER';
 		$customVariableIds[] = 'MAG_CURRENTUSERREALNAME';
+		$customVariableIds[] = 'MAG_CURRENTUSERTIMEOFFSET';
+		$customVariableIds[] = 'MAG_CURRENTUSERTIMESTAMP';
 		$customVariableIds[] = 'MAG_LOGO';
 		$customVariableIds[] = 'MAG_UUID';
 		$customVariableIds[] = 'MAG_USERLANGUAGECODE';
@@ -54,6 +56,15 @@ class MyVariablesHooks {
 				$parser->disableCache();
 				$ret = $GLOBALS['wgUser']->mRealName;
 				break;
+			case 'MAG_CURRENTUSERTIMEOFFSET':
+				$parser->disableCache();
+				$ret = MyVariablesHooks::getTimeOffset();
+				break;
+			case 'MAG_CURRENTUSERTIMESTAMP':
+				$parser->disableCache();
+				$offset = MyVariablesHooks::getTimeOffset();
+				$ret = gmdate( 'YmdHis', strtotime($offset . ' hours') );
+				break;
 			case 'MAG_UUID':
 				$parser->disableCache();
 				$ret = UIDGenerator::newUUIDv4();
@@ -65,5 +76,12 @@ class MyVariablesHooks {
 				return false;
 		}
 		return true;
+	}
+
+	private static function getTimeOffset() {
+		$offset = $GLOBALS['wgUser']->mOptions['timecorrection'];
+		if ( preg_match('/Offset\|([+-]?\d+)/', $offset, $matches) ) {
+			return $matches[1] / 60;
+		}
 	}
 }
