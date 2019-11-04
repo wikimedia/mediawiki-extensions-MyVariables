@@ -38,24 +38,24 @@ class MyVariablesHooks {
 		switch ( $magicWordId ) {
 			case 'MAG_CURRENTLOGGEDUSER':
 				if ( $GLOBALS['wgUser']->isAnon() ) {
-					$parser->disableCache();
+					$parser->getOutput()->updateCacheExpiry( 0 );
 					$ret = '';
 					break;
 				}
 				// break is not necessary here
 			case 'MAG_CURRENTUSER':
-				$parser->disableCache();
+				$parser->getOutput()->updateCacheExpiry( 0 );
 				$ret = $GLOBALS['wgUser']->mName;
 				break;
 			case 'MAG_LOGO':
 				$ret = $GLOBALS['wgLogo'];
 				break;
 			case 'MAG_CURRENTUSERREALNAME':
-				$parser->disableCache();
+				$parser->getOutput()->updateCacheExpiry( 0 );
 				$ret = $GLOBALS['wgUser']->mRealName;
 				break;
 			case 'MAG_UUID':
-				$parser->disableCache();
+				$parser->getOutput()->updateCacheExpiry( 0 );
 				$ret = UIDGenerator::newUUIDv4();
 				break;
 			case 'MAG_USERLANGUAGECODE':
