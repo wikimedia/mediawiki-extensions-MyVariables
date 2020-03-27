@@ -25,13 +25,13 @@ class MyVariablesHooks {
 	/**
 	 * Assign a value to our variable
 	 *
-	 * @param Parser &$parser
+	 * @param Parser $parser
 	 * @param array &$cache
-	 * @param string &$magicWordId
+	 * @param string $magicWordId
 	 * @param string &$ret
 	 * @return bool
 	 */
-	public static function assignAValue( &$parser, &$cache, &$magicWordId, &$ret ) {
+	public static function assignAValue( $parser, &$cache, $magicWordId, &$ret ) {
 		// Disable parser cache for all variables except USERLANGUAGECODE and LOGO.
 		// USERLANGUAGECODE will cause the parser cache to vary on userlang.
 		// LOGO doesn't change often enough to be considered dynamic.
@@ -39,27 +39,28 @@ class MyVariablesHooks {
 			case 'MAG_CURRENTLOGGEDUSER':
 				if ( $GLOBALS['wgUser']->isAnon() ) {
 					$parser->getOutput()->updateCacheExpiry( 0 );
-					$ret = '';
+					$ret = $cache[$magicWordId] = '';
 					break;
 				}
 				// break is not necessary here
 			case 'MAG_CURRENTUSER':
 				$parser->getOutput()->updateCacheExpiry( 0 );
-				$ret = $GLOBALS['wgUser']->mName;
+				$ret = $cache[$magicWordId] = $GLOBALS['wgUser']->mName;
 				break;
 			case 'MAG_LOGO':
-				$ret = $GLOBALS['wgLogo'];
+				$ret = $cache[$magicWordId] = $GLOBALS['wgLogo'];
 				break;
 			case 'MAG_CURRENTUSERREALNAME':
 				$parser->getOutput()->updateCacheExpiry( 0 );
-				$ret = $GLOBALS['wgUser']->mRealName;
+				$ret = $cache[$magicWordId] = $GLOBALS['wgUser']->mRealName;
 				break;
 			case 'MAG_UUID':
 				$parser->getOutput()->updateCacheExpiry( 0 );
-				$ret = UIDGenerator::newUUIDv4();
+				// Only one UUID per page.
+				$ret = $cache[$magicWordId] = UIDGenerator::newUUIDv4();
 				break;
 			case 'MAG_USERLANGUAGECODE':
-				$ret = $parser->getOptions()->getUserLang();
+				$ret = $cache[$magicWordId] = $parser->getOptions()->getUserLang();
 				break;
 			default:
 				return false;
