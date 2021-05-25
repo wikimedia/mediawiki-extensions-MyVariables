@@ -21,7 +21,7 @@
 		"MyVariablesMagic": "MyVariables.i18n.magic.php"
 	},
 	"AutoloadClasses": {
-		"MyVariablesHooks": "MyVariablesHooks.php"
+		"MyVariablesHooks": "includes/MyVariablesHooks.php"
 	},
 	"Hooks": {
 		"MagicWordwgVariableIDs": "MyVariablesHooks::declareVarIds",
