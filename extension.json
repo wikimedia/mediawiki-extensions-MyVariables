@@ -1,6 +1,6 @@
 {
 	"name": "MyVariables",
-	"version": "3.5.1",
+	"version": "4.0",
 	"author": [
 		"[https://www.mediawiki.org/wiki/User:Nad Aran Dunkley]",
 		"[https://www.mediawiki.org/wiki/User:Pastakhov Pavel Astakhov]"
@@ -25,7 +25,8 @@
 	},
 	"Hooks": {
 		"MagicWordwgVariableIDs": "MyVariablesHooks::declareVarIds",
-		"ParserGetVariableValueSwitch": "MyVariablesHooks::assignAValue"
+		"ParserGetVariableValueSwitch": "MyVariablesHooks::assignAValue",
+		"ParserFirstCallInit": "MyVariablesHooks::onParserFirstCallInit"
 	},
 	"manifest_version": 2
 }
