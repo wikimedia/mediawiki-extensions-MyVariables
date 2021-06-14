@@ -122,9 +122,11 @@ class MyVariablesHooks {
 				$dbr = wfGetDB( DB_REPLICA );
 				$result = $dbr->select( 'page_props', 'pp_value',
 					[ 'pp_propname = "page_image_free"', "pp_page = $id" ] );
+				$image = '';
 				foreach ( $result as $row ) {
-					$ret = $cache[$magicWordId] = $row->pp_value;
+					$image = $row->pp_value;
 				}
+				$ret = $cache[$magicWordId] = $image;
 				break;
 			case 'MAG_REALNAME':
 				$parser->getOutput()->updateCacheExpiry( 0 );
