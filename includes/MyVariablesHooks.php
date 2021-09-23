@@ -18,11 +18,14 @@ class MyVariablesHooks {
 		$customVariableIds[] = 'MAG_FIRSTREVISIONID';
 		$customVariableIds[] = 'MAG_FIRSTREVISIONTIMESTAMP';
 		$customVariableIds[] = 'MAG_FIRSTREVISIONUSER';
+		$customVariableIds[] = 'MAG_HITCOUNTER';
 		$customVariableIds[] = 'MAG_LOGO';
 		$customVariableIds[] = 'MAG_PAGEIMAGE';
+		$customVariableIds[] = 'MAG_REDIRECTS';
 		$customVariableIds[] = 'MAG_REALNAME';
 		$customVariableIds[] = 'MAG_SUBPAGES';
 		$customVariableIds[] = 'MAG_UUID';
+		$customVariableIds[] = 'MAG_USERREGISTRATION';
 		$customVariableIds[] = 'MAG_USERLANGUAGECODE';
 		$customVariableIds[] = 'MAG_WHATLINKSHERE';
 
@@ -113,6 +116,20 @@ class MyVariablesHooks {
 					$ret = $cache[$magicWordId] = $user->getName();
 				}
 				break;
+			case 'MAG_HITCOUNTER':
+				$parser->getOutput()->updateCacheExpiry( 0 );
+				if ( !ExtensionRegistry::getInstance()->isLoaded( 'HitCounters' ) ) {
+					break;
+				}
+				$id = $parser->getTitle()->getArticleID();
+				$dbr = wfGetDB( DB_REPLICA );
+				$result = $dbr->select( 'hit_counter', 'page_counter', "page_id = $id" );
+				$counter = '';
+				foreach ( $result as $row ) {
+					$counter = $row->page_counter;
+				}
+				$ret = $cache[$magicWordId] = $counter;
+				break;
 			case 'MAG_LOGO':
 				$ret = $cache[$magicWordId] = $GLOBALS['wgLogo'];
 				break;
@@ -127,6 +144,16 @@ class MyVariablesHooks {
 					$image = $row->pp_value;
 				}
 				$ret = $cache[$magicWordId] = $image;
+				break;
+			case 'MAG_REDIRECTS':
+				$parser->getOutput()->updateCacheExpiry( 0 );
+				$title = $parser->getTitle();
+				$redirects = [];
+				foreach ( $title->getRedirectsHere() as $redirect ) {
+					$redirects[] = $redirect->getFullText();
+				}
+				$redirects = implode( ', ', $redirects );
+				$ret = $cache[$magicWordId] = $redirects;
 				break;
 			case 'MAG_REALNAME':
 				$parser->getOutput()->updateCacheExpiry( 0 );
@@ -152,6 +179,18 @@ class MyVariablesHooks {
 				$parser->getOutput()->updateCacheExpiry( 0 );
 				// Only one UUID per page.
 				$ret = $cache[$magicWordId] = UIDGenerator::newUUIDv4();
+				break;
+			case 'MAG_USERREGISTRATION':
+				$parser->getOutput()->updateCacheExpiry( 0 );
+				$title = $parser->getTitle();
+				if ( $title->getNamespace() === NS_USER ) {
+					$name = $title->getText();
+					$user = User::newFromName( $name );
+					if ( $user ) {
+						$registration = $user->getRegistration();
+						$ret = $cache[$magicWordId] = $registration;
+					}
+				}
 				break;
 			case 'MAG_USERLANGUAGECODE':
 				$ret = $cache[$magicWordId] = $parser->getOptions()->getUserLang();
