@@ -59,7 +59,7 @@ class MyVariablesHooks {
 	 * @param array &$cache
 	 * @param string $magicWordId
 	 * @param string &$ret
-	 * @return bool
+	 * @return void
 	 */
 	public static function assignAValue( $parser, &$cache, $magicWordId, &$ret ) {
 		// Disable parser cache for all variables except USERLANGUAGECODE and LOGO.
@@ -165,9 +165,6 @@ class MyVariablesHooks {
 				$links = implode( ', ', $links );
 				$ret = $cache[$magicWordId] = $links;
 				break;
-			default:
-				return false;
 		}
-		return true;
 	}
 }
