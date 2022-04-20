@@ -29,7 +29,7 @@ class MyVariablesHooks {
 	 * @param array &$cache
 	 * @param string $magicWordId
 	 * @param string &$ret
-	 * @return bool
+	 * @return void
 	 */
 	public static function assignAValue( $parser, &$cache, $magicWordId, &$ret ) {
 		// Disable parser cache for all variables except USERLANGUAGECODE and LOGO.
@@ -62,9 +62,6 @@ class MyVariablesHooks {
 			case 'MAG_USERLANGUAGECODE':
 				$ret = $cache[$magicWordId] = $parser->getOptions()->getUserLang();
 				break;
-			default:
-				return false;
 		}
-		return true;
 	}
 }
