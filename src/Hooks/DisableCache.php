@@ -16,7 +16,7 @@ class DisableCache implements ArticleViewHeaderHook {
 	 * @return bool|void
 	 */
 	public function onArticleViewHeader( $article, &$pcache, &$outputDone ) {
-		if ( $article->getParserOutput()->getFlag( 'my_variables_no_cache' ) ) {
+		if ( $article->getParserOutput() && $article->getParserOutput()->getFlag( 'my_variables_no_cache' ) ) {
 			// Effectively prevents contents from being sourced from parser cache
 			// See Article::view for details
 			$outputDone = false;
