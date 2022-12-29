@@ -15,7 +15,7 @@ class AssignAValue implements ParserGetVariableValueSwitchHook {
 	 */
 	public function onParserGetVariableValueSwitch( $parser, &$variableCache, $magicWordId, &$ret, $frame ) {
 		$user = RequestContext::getMain()->getUser();
-		$title = $frame->getTitle();
+		$title = $parser->getTitle();
 
 		switch ( $magicWordId ) {
 			case 'MAG_CURRENTLOGGEDUSER':
