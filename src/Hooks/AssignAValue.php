@@ -39,18 +39,27 @@ class AssignAValue implements ParserGetVariableValueSwitchHook {
 				$ret = $variableCache[$magicWordId] = $user->getRealName();
 				break;
 			case 'MAG_FIRSTREVISIONID':
-				$parser->getOutput()->updateCacheExpiry( 0 );
 				$rev = MediaWikiServices::getInstance()->getRevisionLookup()->getFirstRevision( $title );
+				if ( !$rev ) {
+					// Only way this could possibly change is if page doesn't exist.
+					$parser->getOutput()->updateCacheExpiry( 0 );
+				}
 				$ret = $variableCache[$magicWordId] = $rev ? $rev->getId() : '';
 				break;
 			case 'MAG_FIRSTREVISIONTIMESTAMP':
-				$parser->getOutput()->updateCacheExpiry( 0 );
 				$rev = MediaWikiServices::getInstance()->getRevisionLookup()->getFirstRevision( $title );
+				if ( !$rev ) {
+					// Only way this could possibly change is if page doesn't exist.
+					$parser->getOutput()->updateCacheExpiry( 0 );
+				}
 				$ret = $variableCache[$magicWordId] = $rev ? $rev->getTimestamp() : '';
 				break;
 			case 'MAG_FIRSTREVISIONUSER':
-				$parser->getOutput()->updateCacheExpiry( 0 );
 				$rev = MediaWikiServices::getInstance()->getRevisionLookup()->getFirstRevision( $title );
+				if ( !$rev ) {
+					// Only way this could possibly change is if page doesn't exist.
+					$parser->getOutput()->updateCacheExpiry( 0 );
+				}
 				$ret = $variableCache[$magicWordId] = $rev ? $rev->getUser()->getName() : '';
 				break;
 			case 'MAG_HITCOUNTER':
@@ -71,7 +80,6 @@ class AssignAValue implements ParserGetVariableValueSwitchHook {
 				$ret = $variableCache[$magicWordId] = $counter;
 				break;
 			case 'MAG_LOGO':
-				$parser->getOutput()->updateCacheExpiry( 0 );
 				$logos = MediaWikiServices::getInstance()->getMainConfig()->get( 'Logos' );
 				$ret = $variableCache[$magicWordId] = $logos['1x'] ?? '';
 				break;
