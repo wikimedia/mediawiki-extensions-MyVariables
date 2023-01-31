@@ -19,17 +19,18 @@ class AssignAValue implements ParserGetVariableValueSwitchHook {
 
 		switch ( $magicWordId ) {
 			case 'MAG_CURRENTLOGGEDUSER':
-				// Notes: this sets flag later to be checked within DisableCache hook
-				// to prevent content from being sourced from ParserCache
-				// thus this forces the magic to be re-evaluated each page view
-				// at the same time this keeps Cache-control untouched thus allows external
-				// proxies to cache the page
-				$parser->getOutput()->setFlag( 'my_variables_no_cache' );
-				if ( $user->isAnon() ) {
+				// updateCacheExpiry does not generally affect CDN cacheability, except
+				// if set to 0, in which case it disables it. In this case, we want to
+				// cache this only for anons. To do this, we add a cache option for
+				// being either logged in or not logged in. The logged in case will still
+				// set the expiry to 0, while the logged out cache will have a normal expire.
+				// This means that CDN cache is preserved, and logged out users can still
+				// use parser cache. Logged in users will not have parser cache.
+				if ( $parser->getOptions()->getOption( 'MyVarLoggedIn' ) === "no" ) {
 					$ret = $variableCache[$magicWordId] = '';
 					break;
 				}
-			// break is not necessary here
+			// No break. We fall through for the user is logged in case.
 			case 'MAG_CURRENTUSER':
 				$parser->getOutput()->updateCacheExpiry( 0 );
 				$ret = $variableCache[$magicWordId] = $user->getName();
