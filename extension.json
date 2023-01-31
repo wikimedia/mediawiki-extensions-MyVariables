@@ -28,7 +28,7 @@
 		"GetMagicVariableIDs": "declareVarIds",
 		"ParserGetVariableValueSwitch": "assignAValue",
 		"ParserFirstCallInit": "registerFunctions",
-		"ArticleViewHeader": "disableCache"
+		"ParserOptionsRegister": "registerFunctions"
 	},
 	"HookHandlers": {
 		"declareVarIds": {
@@ -39,9 +39,6 @@
 		},
 		"registerFunctions": {
 			"class": "MediaWiki\\Extension\\MyVariables\\Hooks\\RegisterFunctions"
-		},
-		"disableCache": {
-			"class": "MediaWiki\\Extension\\MyVariables\\Hooks\\DisableCache"
 		}
 	},
 	"manifest_version": 2
