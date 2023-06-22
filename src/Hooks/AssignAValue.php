@@ -67,7 +67,6 @@ class AssignAValue implements ParserGetVariableValueSwitchHook {
 				if ( !ExtensionRegistry::getInstance()->isLoaded( 'HitCounters' ) ) {
 					break;
 				}
-				$parser->getOutput()->updateCacheExpiry( 0 );
 				$dbr = wfGetDB( DB_REPLICA );
 				$result = $dbr->select(
 					'hit_counter',
@@ -85,7 +84,6 @@ class AssignAValue implements ParserGetVariableValueSwitchHook {
 				$ret = $variableCache[$magicWordId] = $logos['1x'] ?? '';
 				break;
 			case 'MAG_PAGEIMAGE':
-				$parser->getOutput()->updateCacheExpiry( 0 );
 				$dbr = wfGetDB( DB_REPLICA );
 				$result = $dbr->select(
 					'page_props',
@@ -102,7 +100,6 @@ class AssignAValue implements ParserGetVariableValueSwitchHook {
 				$ret = $variableCache[$magicWordId] = $image;
 				break;
 			case 'MAG_REDIRECTS':
-				$parser->getOutput()->updateCacheExpiry( 0 );
 				$redirects = [];
 				foreach ( $title->getRedirectsHere() as $redirect ) {
 					$redirects[] = $redirect->getFullText();
@@ -111,7 +108,6 @@ class AssignAValue implements ParserGetVariableValueSwitchHook {
 				$ret = $variableCache[$magicWordId] = $redirects;
 				break;
 			case 'MAG_REALNAME':
-				$parser->getOutput()->updateCacheExpiry( 0 );
 				if ( $title->getNamespace() === NS_USER ) {
 					$name = $title->getText();
 					$u = MediaWikiServices::getInstance()->getUserFactory()->newFromName( $name );
@@ -122,7 +118,6 @@ class AssignAValue implements ParserGetVariableValueSwitchHook {
 				}
 				break;
 			case 'MAG_SUBPAGES':
-				$parser->getOutput()->updateCacheExpiry( 0 );
 				$subpages = [];
 				foreach ( $title->getSubpages() as $subpage ) {
 					$subpages[] = $subpage;
@@ -137,7 +132,6 @@ class AssignAValue implements ParserGetVariableValueSwitchHook {
 					->newUUIDv4();
 				break;
 			case 'MAG_USERREGISTRATION':
-				$parser->getOutput()->updateCacheExpiry( 0 );
 				if ( $title->getNamespace() === NS_USER ) {
 					$name = $title->getText();
 					$u = MediaWikiServices::getInstance()->getUserFactory()->newFromName( $name );
