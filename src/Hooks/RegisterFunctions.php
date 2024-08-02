@@ -15,6 +15,7 @@ class RegisterFunctions implements ParserFirstCallInitHook, ParserOptionsRegiste
 	 */
 	public function onParserFirstCallInit( $parser ) {
 		$parser->setFunctionHook( 'MAG_REALNAME', [ MyVariables::class, 'getRealName' ], SFH_NO_HASH );
+		$parser->setFunctionHook( 'MAG_PAGEIMAGE', [ MyVariables::class, 'getPageImage' ], SFH_NO_HASH );
 	}
 
 	/**
