@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\MyVariables;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use Parser;
 
 /**
@@ -25,6 +26,35 @@ class MyVariables {
 			return $user->getRealName();
 		}
 		return '';
+	}
+
+	/**
+	 * Get the page image property of the given page
+	 *
+	 * @param Parser $parser
+	 * @param string $input
+	 * @return string
+	 */
+	public static function getPageImage( Parser $parser, string $input = '' ) {
+		$title = Title::newFromText( $input );
+		if ( $title === null || !$title->exists() ) {
+			return '';
+		}
+
+		$dbr = wfGetDB( DB_REPLICA );
+		$result = $dbr->select(
+			'page_props',
+			'pp_value',
+			[
+				'pp_propname = "page_image_free"',
+				'pp_page = ' . $title->getArticleID()
+			]
+		);
+		$image = '';
+		foreach ( $result as $row ) {
+			$image = $row->pp_value;
+		}
+		return $image;
 	}
 
 }
