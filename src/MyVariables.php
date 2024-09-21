@@ -48,7 +48,8 @@ class MyVariables {
 			[
 				'pp_propname = "page_image_free"',
 				'pp_page = ' . $title->getArticleID()
-			]
+			],
+			__METHOD__
 		);
 		$image = '';
 		foreach ( $result as $row ) {

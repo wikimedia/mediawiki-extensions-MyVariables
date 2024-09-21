@@ -71,7 +71,8 @@ class AssignAValue implements ParserGetVariableValueSwitchHook {
 				$result = $dbr->select(
 					'hit_counter',
 					'page_counter',
-					'page_id = ' . $title->getArticleID()
+					'page_id = ' . $title->getArticleID(),
+					__METHOD__
 				);
 				$counter = '';
 				foreach ( $result as $row ) {
@@ -91,7 +92,8 @@ class AssignAValue implements ParserGetVariableValueSwitchHook {
 					[
 						'pp_propname = "page_image_free"',
 						'pp_page = ' . $title->getArticleID()
-					]
+					],
+					__METHOD__
 				);
 				$image = '';
 				foreach ( $result as $row ) {
