@@ -41,7 +41,7 @@ class MyVariables {
 			return '';
 		}
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$result = $dbr->select(
 			'page_props',
 			'pp_value',

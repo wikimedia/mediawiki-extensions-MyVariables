@@ -67,7 +67,7 @@ class AssignAValue implements ParserGetVariableValueSwitchHook {
 				if ( !ExtensionRegistry::getInstance()->isLoaded( 'HitCounters' ) ) {
 					break;
 				}
-				$dbr = wfGetDB( DB_REPLICA );
+				$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 				$result = $dbr->select(
 					'hit_counter',
 					'page_counter',
@@ -84,7 +84,7 @@ class AssignAValue implements ParserGetVariableValueSwitchHook {
 				$ret = $variableCache[$magicWordId] = $logos['1x'] ?? '';
 				break;
 			case 'MAG_PAGEIMAGE':
-				$dbr = wfGetDB( DB_REPLICA );
+				$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 				$result = $dbr->select(
 					'page_props',
 					'pp_value',
