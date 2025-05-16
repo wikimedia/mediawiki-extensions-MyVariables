@@ -7,7 +7,7 @@
 		"MediaWiki",
 		"extension"
 	],
-	"homepage": "https://www.mediawiki.org/wiki/Extension:MyVariables",
+	"homepage": "https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:MyVariables",
 	"license": "GPL-2.0-or-later",
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "47.0.0",
