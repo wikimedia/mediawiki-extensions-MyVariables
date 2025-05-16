@@ -1,4 +1,14 @@
 {
+	"name": "mediawiki/my-variables",
+	"type": "mediawiki-extension",
+	"description": "The MyVariables extension adds new built-in variables to MediaWiki",
+	"keywords": [
+		"wiki",
+		"MediaWiki",
+		"extension"
+	],
+	"homepage": "https://www.mediawiki.org/wiki/Extension:MyVariables",
+	"license": "GPL-2.0-or-later",
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "47.0.0",
 		"mediawiki/mediawiki-phan-config": "0.15.1",
